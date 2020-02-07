@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+/****************************************************************************
+**
+** Copyright (C) 2020 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the Qt VS Tools.
+**
+** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3 as published by the Free Software
+** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+-->
+<Project DefaultTargets="Build" ToolsVersion="15.0"
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Windows|x64">
+      <Configuration>Debug_Windows</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Windows|x64">
+      <Configuration>Release_Windows</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Linux|x64">
+      <Configuration>Debug_Linux</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Linux|x64">
+      <Configuration>Release_Linux</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals"
+    Condition="'$(Configuration)' == 'Debug_Windows' OR '$(Configuration)' == 'Release_Windows'">
+    <ProjectGuid>{594104b1-aa41-4aaa-bea5-ce2531739eda}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>wiggly</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals"
+    Condition="'$(Configuration)' == 'Debug_Linux' OR '$(Configuration)' == 'Release_Linux'">
+    <ProjectGuid>{594104b1-aa41-4aaa-bea5-ce2531739eda}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>wiggly</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup
+    Condition="'$(Configuration)|$(Platform)'=='Debug_Windows|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup
+    Condition="'$(Configuration)|$(Platform)'=='Release_Windows|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup
+    Condition="'$(Configuration)|$(Platform)'=='Debug_Linux|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup
+    Condition="'$(Configuration)|$(Platform)'=='Release_Linux|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Windows|x64'">
+    <IncludePath>
+      ;$(VC_IncludePath);
+      ;$(WindowsSDK_IncludePath);
+      ;$(QTDIR)\include;
+      ;$(QTDIR)\include\QtWidgets;
+      ;$(QTDIR)\include\QtGui;
+      ;$(QTDIR)\include\QtANGLE;
+      ;$(QTDIR)\include\QtCore;
+      ;$(QTDIR)\mkspecs\win32-msvc;
+    </IncludePath>
+    <PreprocessorDefinitions>
+      ;UNICODE;
+      ;_UNICODE;
+      ;WIN32;
+      ;_ENABLE_EXTENDED_ALIGNED_STORAGE;
+      ;WIN64;
+      ;QT_WIDGETS_LIB;
+      ;QT_GUI_LIB;
+      ;QT_CORE_LIB;
+    </PreprocessorDefinitions>
+    <ExecutablePath>
+      ;$(VC_ExecutablePath_x64);
+      ;$(WindowsSDK_ExecutablePath);
+      ;$(VS_ExecutablePath);
+      ;$(MSBuild_ExecutablePath);
+      ;$(FxCopDir);
+      ;$(PATH);
+    </ExecutablePath>
+    <ReferencePath>$(VC_ReferencesPath_x64)</ReferencePath>
+    <LibraryPath>
+      ;$(VC_LibraryPath_x64);
+      ;$(WindowsSDK_LibraryPath_x64);
+      ;$(NETFXKitsDir)Lib\um\x64;
+    </LibraryPath>
+    <LibraryWPath>$(WindowsSDK_MetadataPath);;</LibraryWPath>
+    <SourcePath>$(VC_SourcePath)</SourcePath>
+    <ExcludePath>
+      ;$(VC_IncludePath);
+      ;$(WindowsSDK_IncludePath);
+      ;$(VC_ExecutablePath_x64);
+      ;$(WindowsSDK_ExecutablePath);
+      ;$(VS_ExecutablePath);
+      ;$(FxCopDir);
+      ;$(MSBuild_ExecutablePath);
+      ;$(VC_LibraryPath_x64);
+      ;$(SystemRoot);
+    </ExcludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Windows|x64'">
+    <IncludePath>
+      ;$(VC_IncludePath);
+      ;$(WindowsSDK_IncludePath);
+      ;$(QTDIR)\include;
+      ;$(QTDIR)\include\QtWidgets;
+      ;$(QTDIR)\include\QtGui;
+      ;$(QTDIR)\include\QtANGLE;
+      ;$(QTDIR)\include\QtCore;
+      ;$(QTDIR)\mkspecs\win32-msvc;
+    </IncludePath>
+    <PreprocessorDefinitions>
+      ;UNICODE;
+      ;_UNICODE;
+      ;WIN32;
+      ;_ENABLE_EXTENDED_ALIGNED_STORAGE;
+      ;WIN64;
+      ;QT_NO_DEBUG;
+      ;QT_WIDGETS_LIB;
+      ;QT_GUI_LIB;
+      ;QT_CORE_LIB;
+    </PreprocessorDefinitions>
+    <ExecutablePath>
+      ;$(VC_ExecutablePath_x64);
+      ;$(WindowsSDK_ExecutablePath);
+      ;$(VS_ExecutablePath);
+      ;$(MSBuild_ExecutablePath);
+      ;$(FxCopDir);
+      ;$(PATH);
+    </ExecutablePath>
+    <ReferencePath>$(VC_ReferencesPath_x64);;</ReferencePath>
+    <LibraryPath>
+      ;$(VC_LibraryPath_x64);
+      ;$(WindowsSDK_LibraryPath_x64);
+      ;$(NETFXKitsDir)Lib\um\x64;
+    </LibraryPath>
+    <LibraryWPath>$(WindowsSDK_MetadataPath)</LibraryWPath>
+    <SourcePath>$(VC_SourcePath)</SourcePath>
+    <ExcludePath>
+      ;$(VC_IncludePath);
+      ;$(WindowsSDK_IncludePath);
+      ;$(VC_ExecutablePath_x64);
+      ;$(WindowsSDK_ExecutablePath);
+      ;$(VS_ExecutablePath);
+      ;$(FxCopDir);
+      ;$(MSBuild_ExecutablePath);
+      ;$(VC_LibraryPath_x64);
+      ;$(SystemRoot);
+    </ExcludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Linux|x64'">
+    <IncludePath>
+      ;/usr/include/x86_64-linux-gnu/qt5;
+      ;/usr/include/x86_64-linux-gnu/qt5/QtCore;
+      ;/usr/include/x86_64-linux-gnu/qt5/QtWidgets;
+    </IncludePath>
+    <PreprocessorDefinitions>
+      ;QT_WIDGETS_LIB;
+      ;QT_GUI_LIB;
+      ;QT_CORE_LIB;
+    </PreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Linux|x64'">
+    <IncludePath>
+      ;/usr/include/x86_64-linux-gnu/qt5;
+      ;/usr/include/x86_64-linux-gnu/qt5/QtCore;
+      ;/usr/include/x86_64-linux-gnu/qt5/QtWidgets;
+    </IncludePath>
+    <PreprocessorDefinitions>
+      ;QT_NO_DEBUG;
+      ;QT_WIDGETS_LIB;
+      ;QT_GUI_LIB;
+      ;QT_CORE_LIB;
+    </PreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Windows|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>
+        ;$(PreprocessorDefinitions);
+        ;%(PreprocessorDefinitions);
+      </PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>
+        ;$(QTDIR)\lib\Qt5Widgetsd.lib;
+        ;$(QTDIR)\lib\Qt5Guid.lib;
+        ;$(QTDIR)\lib\Qt5Cored.lib;
+        ;$(QTDIR)\lib\qtmaind.lib;
+        ;shell32.lib;
+        ;%(AdditionalDependencies);
+      </AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Windows|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>
+        ;$(PreprocessorDefinitions);
+        ;%(PreprocessorDefinitions);
+      </PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>
+        ;$(QTDIR)\lib\Qt5Widgets.lib;
+        ;$(QTDIR)\lib\Qt5Gui.lib;
+        ;$(QTDIR)\lib\Qt5Core.lib;
+        ;$(QTDIR)\lib\qtmain.lib;
+        ;shell32.lib;
+        ;%(AdditionalDependencies);
+      </AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Linux|x64'">
+    <ClCompile>
+      <PositionIndependentCode>true</PositionIndependentCode>
+      <PreprocessorDefinitions>
+        ;$(PreprocessorDefinitions);
+        ;_REENTRANT;
+        ;%(PreprocessorDefinitions);
+      </PreprocessorDefinitions>
+      <ExceptionHandling>Disabled</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <AdditionalOptions>-pipe -std=gnu++11</AdditionalOptions>
+      <CAdditionalWarning>
+        ;switch;no-deprecated-declarations;empty-body;return-type;parentheses;no-pointer-sign;
+        ;no-format;uninitialized;unreachable-code;unused-function;unused-value;unused-variable;
+      </CAdditionalWarning>
+      <CppAdditionalWarning>
+        ;switch;no-deprecated-declarations;empty-body;return-type;parentheses;no-format;
+        ;uninitialized;unreachable-code;unused-function;unused-value;unused-variable;
+      </CppAdditionalWarning>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>Qt5Core;Qt5Gui;Qt5Widgets;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Linux|x64'">
+    <ClCompile>
+      <PositionIndependentCode>true</PositionIndependentCode>
+      <PreprocessorDefinitions>
+        ;$(PreprocessorDefinitions);
+        ;_REENTRANT;
+        ;%(PreprocessorDefinitions);
+      </PreprocessorDefinitions>
+      <ExceptionHandling>Disabled</ExceptionHandling>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <AdditionalOptions>-pipe -std=gnu++11</AdditionalOptions>
+      <CAdditionalWarning>
+        ;switch;no-deprecated-declarations;empty-body;return-type;parentheses;no-pointer-sign;
+        ;no-format;uninitialized;unreachable-code;unused-function;unused-value;unused-variable;
+      </CAdditionalWarning>
+      <CppAdditionalWarning>
+        ;switch;no-deprecated-declarations;empty-body;return-type;parentheses;no-format;
+        ;uninitialized;unreachable-code;unused-function;unused-value;unused-variable;
+      </CppAdditionalWarning>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>Qt5Core;Qt5Gui;Qt5Widgets;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dialog.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="wigglywidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dialog.h" />
+    <ClInclude Include="wigglywidget.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <Target Name="Moc"
+    Inputs="%(ClInclude.Identity)"
+    Outputs="@(ClInclude->'moc/moc_%(Filename).cpp')">
+    <Message Importance="high" Text="moc %(ClInclude.Identity)" />
+    <ItemGroup>
+      <MocPreprocessorDefinitions Include="$(PreprocessorDefinitions)" />
+      <MocIncludePath Include="$(IncludePath)" />
+    </ItemGroup>
+    <PropertyGroup>
+      <MocCmd
+        Condition="'$(Configuration)' == 'Debug_Windows' OR '$(Configuration)' == 'Release_Windows'"
+        >$(QTDIR)\bin\moc.exe</MocCmd>
+      <MocCmd
+        Condition="'$(Configuration)' == 'Debug_Linux' OR '$(Configuration)' == 'Release_Linux'"
+        >/usr/bin/moc</MocCmd>
+      <MocCmd>$(MocCmd) @(MocPreprocessorDefinitions->'-D%(Identity)', ' ')</MocCmd>
+      <MocCmd>$(MocCmd) @(MocIncludePath->'"-I%(Identity)"', ' ')</MocCmd>
+    </PropertyGroup>
+    <Exec
+      Condition="'$(Configuration)' == 'Debug_Windows' OR '$(Configuration)' == 'Release_Windows'"
+      WorkingDirectory="$(ProjectDir)"
+      Command="$(MocCmd) %(ClInclude.Identity) -o moc/moc_%(ClInclude.Filename).cpp" />
+    <ResolveRemoteDir
+      Condition="'$(Configuration)' == 'Debug_Linux' OR '$(Configuration)' == 'Release_Linux'"
+      ProjectDir="$(ProjectDir)" IntermediateDir="$(IntDir)"
+      RemoteProjectDir="$(RemoteProjectDir)/moc" RemoteTarget="$(ResolvedRemoteTarget)"
+      RemoteProjectDirFile="$(RemoteProjectDirFile)"
+      RequireRemoteConnection="$(RequireRemoteConnection)">
+      <Output TaskParameter="ResolvedRemoteProjectDir" PropertyName="ResolvedRemoteMocDir" />
+    </ResolveRemoteDir>
+    <Execute
+      Condition="'$(Configuration)' == 'Debug_Linux' OR '$(Configuration)' == 'Release_Linux'"
+      ProjectDir="$(ProjectDir)" IntermediateDir="$(IntDir)"
+      RemoteProjectDir="$(_ResolvedRemoteProjectDir)" RemoteTarget="$(ResolvedRemoteTarget)"
+      RequireRemoteConnection="$(RequireRemoteConnection)"
+      RemoteFilesToCopyLocallyMapping="$(_ResolvedRemoteProjectDir)moc/moc_%(ClInclude.Filename).cpp:=$(ProjectDir)moc\moc_%(ClInclude.Filename).cpp"
+      Command="$(MocCmd) %(ClInclude.Identity) -o moc/moc_%(ClInclude.Filename).cpp" />
+    <ItemGroup>
+      <ClCompile Include="moc\moc_%(ClInclude.Filename).cpp" />
+    </ItemGroup>
+  </Target>
+  <Target Name="Clean_Moc">
+    <Delete Files="moc\moc_%(ClInclude.Filename).cpp" />
+  </Target>
+  <PropertyGroup>
+    <BeforeBuildCompileTargets>$(BeforeBuildCompileTargets);Moc</BeforeBuildCompileTargets>
+    <CleanDependsOn>$(CleanDependsOn);Clean_Moc</CleanDependsOn>
+  </PropertyGroup>
+</Project>
